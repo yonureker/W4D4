@@ -1,0 +1,22 @@
+<h1> Band Profile </h1>
+
+Band Name: 
+<%= band.name %>
+<br>
+Albums:
+<ul>
+<% band.albums.each do |album| %>
+  <li>
+    <%= album.title %>
+  </li>
+</ul>
+<% end %>
+<br>
+
+
+<% if band.name = 'Metallica' %>
+<img src = "https://thumbs.gfycat.com/UnfortunateRashAfricanfisheagle-small.gif" />
+<% end %>
+
+<br>
+<a href="<%= edit_band_url(@band) %>">Edit this Band</a>

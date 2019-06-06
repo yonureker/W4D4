@@ -1,0 +1,19 @@
+
+<div class="form">
+<h1>See What's Inside?</h1>
+
+<form action="<%= session_url %>" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Email:
+    <input type="text" name="user[email]" value=''>
+  </label>
+  <br>
+  <br>
+  <label>Password:
+    <input type="text" name="user[password]" value=''>
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="Sign In">
+</form>
+</div>
