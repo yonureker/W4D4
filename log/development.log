@@ -3260,3 +3260,236 @@ Processing by BandsController#show as HTML
 Completed 200 OK in 236ms (Views: 216.6ms | ActiveRecord: 8.2ms)
 
 
+Started GET "/bands/5/albums/new" for ::1 at 2019-06-06 17:14:49 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"5"}
+  [1m[36mBand Load (9.5ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:10
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (17.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/new.html.erb:11
+  Rendered albums/new.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 799ms (Views: 647.3ms | ActiveRecord: 26.7ms)
+
+
+Started POST "/albums" for ::1 at 2019-06-06 17:21:28 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"album"=>{"title"=>"hello", "live"=>"true", "year"=>"1935"}}
+  [1m[35m (26.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[35m (22.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:18
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (27.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/new.html.erb:11
+  Rendered albums/new.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 653ms (Views: 388.1ms | ActiveRecord: 75.8ms)
+
+
+Started POST "/albums" for ::1 at 2019-06-06 17:22:10 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"album"=>{"title"=>"hellooo", "live"=>"true", "year"=>"1926"}}
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:18
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/new.html.erb:11
+  Rendered albums/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 719ms (Views: 625.9ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/albums" for ::1 at 2019-06-06 17:23:57 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"album"=>{"title"=>"kola", "live"=>"true", "year"=>"283"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[35m (11.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:18
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/new.html.erb:11
+  Rendered albums/new.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 2360ms (Views: 2191.2ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/bands/5/albums/new" for ::1 at 2019-06-06 17:24:05 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"5"}
+  [1m[36mBand Load (29.7ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:10
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/new.html.erb:11
+  Rendered albums/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 312ms (Views: 217.4ms | ActiveRecord: 48.6ms)
+
+
+Started POST "/albums" for ::1 at 2019-06-06 17:24:14 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"album"=>{"title"=>"dimba", "band_id"=>"1", "live"=>"true", "year"=>"282"}}
+  [1m[35m (5.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mAlbum Create (67.6ms)[0m  [1m[32mINSERT INTO "albums" ("title", "year", "band_id", "live", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "dimba"], ["year", 282], ["band_id", 1], ["live", true], ["created_at", "2019-06-07 00:24:14.962071"], ["updated_at", "2019-06-07 00:24:14.962071"]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:18
+Redirected to http://localhost:3000/albums/1
+Completed 302 Found in 366ms (ActiveRecord: 86.4ms)
+
+
+Started GET "/albums/1" for ::1 at 2019-06-06 17:24:15 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:5
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 204ms (Views: 190.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/session/new" for ::1 at 2019-06-06 17:27:18 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 243ms (Views: 233.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-06-06 17:27:27 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+fgFrfDKFcUvsUgRZqJz0pKohEVZTKe93C34UGfGwFPLDybHvIc32h2UDYAXM2jMYLEJl5P/+euOeN0zHc7OPQ==", "user"=>{"email"=>"heyo@heyo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "heyo@heyo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 333ms (Views: 137.2ms | ActiveRecord: 97.9ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-06 17:27:37 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 287ms (Views: 150.4ms | ActiveRecord: 83.5ms)
+
+
+Started POST "/users" for ::1 at 2019-06-06 17:27:46 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"WI1U131QgTBTatPd66QiLC/TtCjXznjdOljdgM+65FVqene9MR2jL2FPlkyaNTky3co5+h19JotoDfjjtbLqOw==", "user"=>{"email"=>"koma@koma.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "koma@koma.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Create (24.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "koma@koma.com"], ["password_digest", "$2a$12$L0./ixm4d5uv1kYr/Vnc9OCgAMmsk6HFd2eGSu7b7NbjjghmnFYZm"], ["session_token", "K2kR_aQuA7yPnbdrnKESFQ"], ["created_at", "2019-06-07 00:27:47.477961"], ["updated_at", "2019-06-07 00:27:47.477961"]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "koma@koma.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (321.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "mePmSftiFtDw0Pw-EMEXXQ"], ["updated_at", "2019-06-07 00:27:47.528849"], ["id", 8]]
+  ↳ app/models/user.rb:42
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 913ms (ActiveRecord: 355.9ms)
+
+
+Started GET "/users/8" for ::1 at 2019-06-06 17:27:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mePmSftiFtDw0Pw-EMEXXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendered users/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 118ms (Views: 116.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2019-06-06 17:28:08 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"WI1U131QgTBTatPd66QiLC/TtCjXznjdOljdgM+65FVqene9MR2jL2FPlkyaNTky3co5+h19JotoDfjjtbLqOw==", "user"=>{"email"=>"koma@koma.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "koma@koma.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:14
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 575ms (Views: 80.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for ::1 at 2019-06-06 17:28:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2019-06-06 17:28:51 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 152ms (Views: 151.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-06-06 17:28:57 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"4G8Q+Tm9F+BsF7ecIWgWaH13rXDVaFyWmXE3mOxwUQzSmDOTdfA1/14y8g1Q+Q12j24goh/bAsDLJBL7lnhfYg==", "user"=>{"email"=>"kol", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kol"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "kol"], ["password_digest", "$2a$12$1LFc4H6N06rk1RuFNlh4TO7hl3MXrwCga/x3woSjONj.LyYuVwXmu"], ["session_token", "N43FlBpm96tHLWsNpCN2mw"], ["created_at", "2019-06-07 00:28:58.249474"], ["updated_at", "2019-06-07 00:28:58.249474"]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "kol"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "kzzTBF-R8D6O4fFl9Uc8mA"], ["updated_at", "2019-06-07 00:28:58.256397"], ["id", 9]]
+  ↳ app/models/user.rb:42
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 487ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/users/9" for ::1 at 2019-06-06 17:28:58 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kzzTBF-R8D6O4fFl9Uc8mA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.7ms)
+
+

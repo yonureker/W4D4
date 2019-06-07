@@ -7,9 +7,9 @@
   <br>
   <br>
   <label>Band:
-    <select>
+    <select name="album[band_id]">
       <% Band.all.each do |band| %>
-      <option value="<%= band.name %>"><%= band.name %></option>
+      <option value="<%= band.id %>"><%= band.name %></option>
       <% end %>
     </select>
   </label>
