@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :require_user!
+  # before_action :require_user!
 
   def show
     @album = Album.find(params[:id])
@@ -49,6 +49,6 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:band_id, :live, :name, :year)
+    params.require(:album).permit(:band_id, :live, :title, :year)
   end
 end

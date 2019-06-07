@@ -1,0 +1,31 @@
+<center><h2>Add a new album</h2></center>
+
+<form action="<%= albums_url %>" method="post">
+  <label>Title:
+    <input type="text" name="album[title]">
+  </label>
+  <br>
+  <br>
+  <label>Band:
+    <select>
+      <% Band.all.each do |band| %>
+      <option value="<%= band.name %>"><%= band.name %></option>
+      <% end %>
+    </select>
+  </label>
+  <br>
+  <br>
+  <label>Live</label>
+  <input type="radio" id="post_category_rails" name="album[live]" value="true" checked="checked" />
+
+  <label>Studio</label>
+  <input type="radio" id="post_category_java" name="album[live]" value="false" />
+  <br>
+  <br>
+  <label>Year:
+      <input type="number" name="album[year]">
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="Submit Album">
+</form>
